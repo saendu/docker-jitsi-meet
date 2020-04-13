@@ -17,6 +17,16 @@ spec:
       labels:
         k8s-app: jitsi
     spec:
+      volumes:
+        - name: web-claim0
+          persistentVolumeClaim:
+            claimName: web-claim0
+        - name: web-claim1
+          persistentVolumeClaim:
+            claimName: web-claim1
+        - name: web-claim2
+          persistentVolumeClaim:
+            claimName: web-claim2
       containers:
         - name: jicofo
           image: jitsi/jicofo:4384-1
@@ -88,12 +98,19 @@ spec:
             - name: JVB_TCP_HARVESTER_DISABLED
               value: "true"
         - name: web
-          image: blacktr/fuebi-web:0.4
+          image: blacktr/fuebi-web:0.3
           imagePullPolicy: Always
           ports:
           - containerPort: 80
           - containerPort: 443
           resources: {}
+          volumeMounts:
+          - mountPath: /config
+            name: web-claim0
+          - mountPath: /etc/letsencrypt
+            name: web-claim1
+          - mountPath: /usr/share/jitsi-meet/transcripts
+            name: web-claim2
           env:
             - name: XMPP_SERVER
               value: localhost

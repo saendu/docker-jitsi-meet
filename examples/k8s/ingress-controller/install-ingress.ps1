@@ -1,3 +1,7 @@
+az login
+az account set --subscription fc57a1bc-af37-4cbd-a0c1-d7946c8966ab
+
+// REINSTALL (uninstall/install) if meet.fuebiapp.com not responding
 helm install nginx-ingress stable/nginx-ingress \
 --namespace jitsi \
 --set controller.replicaCount=2 \
@@ -6,7 +10,7 @@ helm install nginx-ingress stable/nginx-ingress \
 --set controller.service.loadBalancerIP="51.136.125.32" \
 --set controller.service.annotations."service\.beta\.kubernetes\.io/azure-dns-label-name"="meetapp"
 
-az network public-ip list --resource-group MC_k8_k8-cluster_westeurope --query $("[?name=='51.136.125.32'].[dnsSettings.fqdn]") -o tsv
+az network public-ip list --resource-group MC_k8_k8-cluster_westeurope
 
 az network dns record-set a add-record \
 --resource-group k8 \
@@ -31,4 +35,6 @@ helm template cert-manager jetstack/cert-manager --version v0.13.0 --namespace j
 
   // start dashboard
 az aks browse --resource-group k8 --name k8-cluster
+
+kubectl apply --dry-run=server -f .
   
