@@ -11,7 +11,7 @@
   tls:
     - hosts:
       - meet.fuebiapp.com
-      secretName: tls-secret
+      secretName: fuebiapp-com-tls
   rules:
   - host: meet.fuebiapp.com
     http:
