@@ -2,6 +2,7 @@ ARG JITSI_REPO=jitsi
 FROM ${JITSI_REPO}/base
 
 COPY rootfs/ /
+COPY ./jitsi-meet.tar.bz2 /tmp/install/jitsi-meet.tar.bz2
 
 RUN \
 	apt-dpkg-wrap apt-get update && \
@@ -9,7 +10,6 @@ RUN \
 	apt-get -y install curl && \
 	apt-get install bzip2 && \
 	mkdir -p /tmp/install && \
-	curl -L https://github.com/saendu/fuebiapp/raw/master/release/package/jitsi-meet.tar.bz2 > /tmp/install/jitsi-meet.tar.bz2 && \
 	tar -xvf /tmp/install/jitsi-meet.tar.bz2 -C /usr/share/ && \
 	apt-dpkg-wrap apt-get install -y -t stretch-backports certbot && \
 	apt-dpkg-wrap apt-get -d install -y jitsi-meet-web-config && \
