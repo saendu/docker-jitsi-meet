@@ -1,0 +1,22 @@
+
+ apiVersion: networking.k8s.io/v1beta1
+ kind: Ingress
+ metadata:
+  name: fuebi-beta
+  namespace: jitsi
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt
+ spec:
+  tls:
+    - hosts:
+      - beta.fuebiapp.com
+      secretName: fuebiapp-com-tls
+  rules:
+  - host: beta.fuebiapp.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: web
+          servicePort: http
