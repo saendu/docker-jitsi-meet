@@ -4,3 +4,4 @@ What's different:
 * support aarch64 (Raspberry Pi 4)
 * JWT doesn't work
 * containers updated to Ubuntu Focal instead of Debian Stretch
+* missing jigasi, etherpad and jibri
