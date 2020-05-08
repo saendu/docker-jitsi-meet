@@ -37,4 +37,4 @@ prepare:
 	docker pull debian:stretch-slim
 	FORCE_REBUILD=1 $(MAKE)
 
-.PHONY: all build tag push clean prepare
+.PHONY: all build tag push clean prepare release
