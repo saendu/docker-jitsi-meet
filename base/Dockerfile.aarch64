@@ -2,7 +2,9 @@ FROM ubuntu:focal
 
 ARG JITSI_RELEASE=stable
 
-ENV S6_BEHAVIOUR_IF_STAGE2_FAILS=2
+ARG DEBIAN_FRONTEND=noninteractive
+
+ENV S6_BEHAVIOUR_IF_STAGE2_FAILS=1
 
 ADD https://github.com/just-containers/s6-overlay/releases/download/v1.22.1.0/s6-overlay-aarch64.tar.gz /tmp/
 ADD https://download.jitsi.org/jitsi-key.gpg.key /tmp/jitsi.key
@@ -15,20 +17,20 @@ RUN tar xzf /tmp/s6-overlay-aarch64.tar.gz -C / --exclude='./bin' && tar xzf /tm
 
 RUN \
 	apt-get update && \
-	apt-get install -y apt-transport-https apt-utils ca-certificates gnupg && \
+	apt-get install -y apt-transport-https apt-utils ca-certificates gnupg tzdata && \
 	apt-key add /tmp/jitsi.key && \
 	rm -f /tmp/jitsi.key && \
 	echo "deb https://download.jitsi.org $JITSI_RELEASE/" > /etc/apt/sources.list.d/jitsi.list && \
 	apt-get update && \
 	apt-get dist-upgrade -y && \
-	apt-cleanup && \
+	apt-get clean && \
 	chmod +x /usr/bin/frep
 
 RUN \
 	[ "$JITSI_RELEASE" = "unstable" ] && \
 	apt-get update && \
 	apt-get install -y jq procps curl vim iputils-ping net-tools && \
-	apt-cleanup || \
+	apt-get clean || \
 	true
 
 ENTRYPOINT [ "/init" ]
