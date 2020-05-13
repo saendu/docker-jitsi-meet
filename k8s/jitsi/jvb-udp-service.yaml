@@ -12,4 +12,4 @@ spec:
     port: 10000
     protocol: UDP
   selector:
-    k8s-app: jitsi
+    k8s-app: fuebiapp

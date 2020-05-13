@@ -49,14 +49,14 @@ spec:
             - name: JICOFO_COMPONENT_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: jitsi-config
+                  name: fuebiapp-config
                   key: JICOFO_COMPONENT_SECRET
             - name: JICOFO_AUTH_USER
               value: focus
             - name: JICOFO_AUTH_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: jitsi-config
+                  name: fuebiapp-config
                   key: JICOFO_AUTH_PASSWORD
             - name: TZ
               value: America/Los_Angeles
@@ -77,21 +77,21 @@ spec:
             - name: JICOFO_COMPONENT_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: jitsi-config
+                  name: fuebiapp-config
                   key: JICOFO_COMPONENT_SECRET
             - name: JVB_AUTH_USER
               value: jvb
             - name: JVB_AUTH_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: jitsi-config
+                  name: fuebiapp-config
                   key: JVB_AUTH_PASSWORD
             - name: JICOFO_AUTH_USER
               value: focus
             - name: JICOFO_AUTH_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: jitsi-config
+                  name: fuebiapp-config
                   key: JICOFO_AUTH_PASSWORD
             - name: TZ
               value: America/Los_Angeles
@@ -159,12 +159,12 @@ spec:
             - name: JVB_AUTH_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: jitsi-config
+                  name: fuebiapp-config
                   key: JVB_AUTH_PASSWORD
             - name: JICOFO_AUTH_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: jitsi-config
+                  name: fuebiapp-config
                   key: JICOFO_AUTH_PASSWORD
             - name: JVB_BREWERY_MUC
               value: jvbbrewery

@@ -2,7 +2,7 @@
  apiVersion: networking.k8s.io/v1beta1
  kind: Ingress
  metadata:
-  name: jitsi
+  name: fuebiapp
   namespace: fuebiapp
   annotations:
     kubernetes.io/ingress.class: nginx
