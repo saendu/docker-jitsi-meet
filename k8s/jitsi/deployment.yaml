@@ -19,8 +19,8 @@ spec:
     spec:
       containers:
         - name: jicofo
-          image: blacktr/jicofo:latest
-          imagePullPolicy: IfNotPresent
+          image: blacktr/jicofo
+          imagePullPolicy: Always
           env:
             - name: ENABLE_LETSENCRYPT
               value: '1'
@@ -53,8 +53,8 @@ spec:
             - name: JVB_BREWERY_MUC
               value: jvbbrewery
         - name: prosody
-          image: blacktr/prosody:latest
-          imagePullPolicy: IfNotPresent
+          image: blacktr/prosody
+          imagePullPolicy: Always
           env:
             - name: XMPP_DOMAIN
               value: meet.jitsi
@@ -88,7 +88,7 @@ spec:
             - name: JVB_TCP_HARVESTER_DISABLED
               value: "true"
         - name: web
-          image: blacktr/web:latest
+          image: blacktr/web
           imagePullPolicy: Always
           ports:
           - containerPort: 80
@@ -114,8 +114,8 @@ spec:
             - name: JVB_TCP_HARVESTER_DISABLED
               value: "true"
         - name: jvb
-          image: blacktr/jvb:latest
-          imagePullPolicy: IfNotPresent
+          image: blacktr/jvb
+          imagePullPolicy: Always
           ports:
           - containerPort: 10000
           env:
