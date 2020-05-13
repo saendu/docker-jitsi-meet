@@ -4,7 +4,7 @@ metadata:
   labels:
     k8s-app: jitsi
   name: jitsi
-  namespace: jitsi
+  namespace: fuebiapp
 spec:
   replicas: 1
   strategy:
