@@ -4,7 +4,7 @@ metadata:
   labels:
     service: jvb
   name: jvb-udp
-  namespace: jitsi
+  namespace: fuebiapp
 spec:
   type: LoadBalancer
   ports:

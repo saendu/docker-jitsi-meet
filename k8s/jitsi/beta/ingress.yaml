@@ -3,7 +3,7 @@
  kind: Ingress
  metadata:
   name: fuebi-beta
-  namespace: jitsi
+  namespace: fuebiapp
   annotations:
     kubernetes.io/ingress.class: nginx
     cert-manager.io/cluster-issuer: letsencrypt

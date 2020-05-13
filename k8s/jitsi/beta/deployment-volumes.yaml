@@ -4,7 +4,7 @@ metadata:
   labels:
     k8s-app: fuebi-beta
   name: fuebi-volumes-beta
-  namespace: jitsi
+  namespace: fuebiapp
 spec:
   replicas: 1
   strategy:
