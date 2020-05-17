@@ -3,9 +3,9 @@ kind: PersistentVolumeClaim
 metadata:
   creationTimestamp: null
   labels:
-    claimName: web-claim2
-  name: web-claim2
-  namespace: fuebiapp
+    claimName: prosody-claim0
+  name: prosody-claim0
+  namespace: jitsi
 spec:
   accessModes:
   - ReadWriteOnce

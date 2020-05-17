@@ -5,7 +5,7 @@ metadata:
   labels:
     claimName: web-claim1
   name: web-claim1
-  namespace: fuebiapp
+  namespace: jitsi
 spec:
   accessModes:
   - ReadWriteOnce

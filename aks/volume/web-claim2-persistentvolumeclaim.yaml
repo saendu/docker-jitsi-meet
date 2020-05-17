@@ -3,9 +3,9 @@ kind: PersistentVolumeClaim
 metadata:
   creationTimestamp: null
   labels:
-    claimName: jicofo-claim0
-  name: jicofo-claim0
-  namespace: fuebiapp
+    claimName: web-claim2
+  name: web-claim2
+  namespace: jitsi
 spec:
   accessModes:
   - ReadWriteOnce
