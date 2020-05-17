@@ -2,18 +2,18 @@
  apiVersion: networking.k8s.io/v1beta1
  kind: Ingress
  metadata:
-  name: fuebiapp
+  name: fuebiapp-ingress
   namespace: fuebiapp
   annotations:
-    kubernetes.io/ingress.class: nginx
-    cert-manager.io/cluster-issuer: letsencrypt
+   kubernetes.io/ingress.class: nginx
+   cert-manager.io/cluster-issuer: letsencrypt
  spec:
   tls:
     - hosts:
-      - meet.fuebiapp.com
-      secretName: fuebiapp-com-tls
+      - wgviktoria.internet-box.ch
+      secretName: wgviktoria-internet-box-ch-tls
   rules:
-  - host: meet.fuebiapp.com
+  - host: wgviktoria.internet-box.ch
     http:
       paths:
       - path: /

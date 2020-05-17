@@ -29,7 +29,7 @@ spec:
             claimName: web-claim2
       containers:
         - name: jicofo
-          image: jitsi/jicofo:4384-1
+          image: blacktr/jicofo:latest
           imagePullPolicy: IfNotPresent
           env:
             - name: ENABLE_LETSENCRYPT
@@ -37,7 +37,7 @@ spec:
             - name: LETSENCRYPT_EMAIL
               value: sandrek@gmail.com
             - name: LETSENCRYPT_DOMAIN
-              value: meet.fuebiapp.com
+              value: wgviktoria.internet-box.ch
             - name: XMPP_SERVER
               value: localhost
             - name: XMPP_DOMAIN
@@ -63,7 +63,7 @@ spec:
             - name: JVB_BREWERY_MUC
               value: jvbbrewery
         - name: prosody
-          image: jitsi/prosody:4384-1
+          image: blacktr/prosody:latest
           imagePullPolicy: IfNotPresent
           env:
             - name: XMPP_DOMAIN
@@ -131,7 +131,7 @@ spec:
             - name: JVB_TCP_HARVESTER_DISABLED
               value: "true"
         - name: jvb
-          image: jitsi/jvb:4384-1
+          image: blacktr/jvb:latest
           imagePullPolicy: IfNotPresent
           ports:
           - containerPort: 10000

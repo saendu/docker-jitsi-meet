@@ -27,7 +27,7 @@ spec:
             - name: LETSENCRYPT_EMAIL
               value: sandrek@gmail.com
             - name: LETSENCRYPT_DOMAIN
-              value: meet.wgviktoria.internet-box.ch
+              value: wgviktoria.internet-box.ch
             - name: XMPP_SERVER
               value: localhost
             - name: XMPP_DOMAIN

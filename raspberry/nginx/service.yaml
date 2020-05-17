@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service: nginx-service
+  name: nginx-service
+  namespace: default
+spec:
+  externalTrafficPolicy: Cluster
+  ports:
+  - name: https
+    nodePort: 30263
+    port: 443
+    protocol: TCP
+    targetPort: 443
+  - name: http
+    nodePort: 32046
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: nginx
+  type: NodePort
