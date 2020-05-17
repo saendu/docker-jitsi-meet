@@ -3,7 +3,7 @@ version: '3'
 services:
     # Frontend
     web:
-        image: amaumene/web:latest
+        image: blacktr/web:latest
         restart: ${RESTART_POLICY}
         ports:
             - '${HTTP_PORT}:80'
@@ -46,7 +46,7 @@ services:
 
     # XMPP server
     prosody:
-        image: amaumene/prosody:latest
+        image: blacktr/prosody:latest
         restart: ${RESTART_POLICY}
         expose:
             - '5222'
@@ -111,7 +111,7 @@ services:
 
     # Focus component
     jicofo:
-        image: amaumene/jicofo:latest
+        image: blacktr/jicofo:latest
         restart: ${RESTART_POLICY}
         volumes:
             - ${CONFIG}/jicofo:/config:Z
@@ -139,7 +139,7 @@ services:
 
     # Video bridge
     jvb:
-        image: amaumene/jvb:latest
+        image: blacktr/jvb:latest
         restart: ${RESTART_POLICY}
         ports:
             - '${JVB_PORT}:${JVB_PORT}/udp'

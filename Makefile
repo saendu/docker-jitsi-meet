@@ -1,7 +1,7 @@
 FORCE_REBUILD ?= 0
 JITSI_RELEASE ?= stable
 JITSI_BUILD ?= latest
-JITSI_REPO ?= amaumene
+JITSI_REPO ?= blacktr
 JITSI_SERVICES ?= base base-java web prosody jicofo jvb
 #JITSI_SERVICES ?= base base-java web prosody jicofo jvb jigasi etherpad jibri
 
