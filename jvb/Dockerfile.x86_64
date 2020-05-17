@@ -5,10 +5,9 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 RUN \
 	apt-get update && \
-	apt-get install -y jicofo && \
+	apt-get install -y jitsi-videobridge2 jq curl && \
 	apt-get clean
 
 COPY rootfs/ /
 
 VOLUME /config
-

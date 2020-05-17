@@ -1,0 +1,26 @@
+ARG JITSI_REPO=jitsi
+FROM ${JITSI_REPO}/base-java
+
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN \
+	apt-get update && \
+	apt-get install -y jitsi-videobridge2 jq curl && \
+	apt-get clean
+
+RUN \
+	apt-get install -y openjdk-8-jdk build-essential libtool maven m4 git automake && \
+	git clone https://github.com/jitsi/jitsi-sctp /tmp/jitsi-sctp && \
+	git clone https://github.com/sctplab/usrsctp.git /tmp/jitsi-sctp/usrsctp/usrsctp &&\
+	cd /tmp/jitsi-sctp &&\
+	mvn package -DbuildSctp -DbuildNativeWrapper -DdeployNewJnilib -DskipTests && \
+	cp jniwrapper/native/target/libjnisctp-linux-aarch64.so jniwrapper/native/src/main/resources/lib/linux/libjnisctp.so && \
+	mvn package && \
+	cp jniwrapper/native/target/jniwrapper-native-1.0-SNAPSHOT.jar  /usr/share/jitsi-videobridge/lib/jniwrapper-native-1.0-SNAPSHOT.jar && \
+	apt-get remove -y openjdk-8-jdk build-essential libtool maven m4 git automake && \
+	apt-get autoremove -y && \
+	apt-get clean
+
+COPY rootfs/ /
+
+VOLUME /config
