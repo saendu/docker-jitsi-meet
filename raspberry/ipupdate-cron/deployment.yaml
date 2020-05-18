@@ -20,7 +20,7 @@ spec:
       containers:
         - name: ipupdate-cron
           image: blacktr/ipcronejob
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           env:
             - name: DYN_SECRET
               valueFrom:
