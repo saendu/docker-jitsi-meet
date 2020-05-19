@@ -11,7 +11,7 @@ RUN chmod +x /run.sh /entrypoint.sh
 
 RUN \
 	apt-get update && \
-	apt-get install -y nano ez-ipupdate && \
+	apt-get install -y nano ez-ipupdate curl && \
 	apt-get clean
 
 ENTRYPOINT /entrypoint.sh
