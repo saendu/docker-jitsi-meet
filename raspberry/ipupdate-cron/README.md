@@ -1,3 +1,6 @@
+# TODO
+Make sure that log file does not grow to large
+
 # Install
 ## create secret
 kubectl create secret generic ipupdate-config -n fuebiapp --from-literal=DYN_SECRET=<YOURSECRET>
