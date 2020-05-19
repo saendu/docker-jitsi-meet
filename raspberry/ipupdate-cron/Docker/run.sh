@@ -6,6 +6,6 @@ if [[ $ip == $oldip ]]; then
     echo "IP ($ip) not changed at $timestamp"
 else
     echo $ip > ip.txt
-    ez-ipupdate -S zoneedit -u blacktr:$DYN_SECRET -h tt.afterworkbeer.com -a $ip
+    ez-ipupdate -S zoneedit -u $DYN_USER:$DYN_SECRET -h $DYN_HOST -a $ip
     echo "IP ($ip) last updated at $timestamp"
 fi

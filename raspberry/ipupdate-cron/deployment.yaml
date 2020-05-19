@@ -22,6 +22,10 @@ spec:
           image: blacktr/ipcronejob
           imagePullPolicy: Always
           env:
+            - name: DYN_HOST
+              value: 'afterworkbeer.com'
+            - name: DYN_USER
+              value: 'blacktr'
             - name: DYN_SECRET
               valueFrom:
                 secretKeyRef:
