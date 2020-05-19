@@ -4,9 +4,10 @@ ip=`curl -s https://hostpapastatus.com/ip/ | grep -ioE "([0-9]{1,3}[\.]){3}[0-9]
 oldip=$(cat ip.txt)
 
 if [ -z "$ip" ]
+then
     echo "No IP could be determined"
     ez-ipupdate -S zoneedit -u $DYN_USER:$DYN_SECRET -h $DYN_HOST
-    echo "IP ($ip) updated at $timestamp"
+    echo "IP updated at $timestamp"
 else
     if [[ $ip == $oldip ]]; then
         echo "IP ($ip) not changed at $timestamp"
