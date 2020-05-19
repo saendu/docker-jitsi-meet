@@ -14,3 +14,6 @@ docker exec -it 63d7da431cf5 /bin/bash
 
 ##  kubernetes run shell
 kubectl exec -it ipupdate-75f459f4b-c4vnl -n fuebiapp -- /bin/bash
+
+## Cron Log
+cat /var/log/cron.log  
