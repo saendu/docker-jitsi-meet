@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: ipupdate-cron
-          image: blacktr/ipcronejob
+          image: blacktr/ipupdate-cron
           imagePullPolicy: Always
           env:
             - name: DYN_HOST
