@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    k8s-app: ipupdate
+  name: ipupdate
+  namespace: fuebiapp
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      k8s-app: ipupdate
+  template:
+    metadata:
+      labels:
+        k8s-app: ipupdate
+    spec:
+      containers:
+        - name: ipupdate-cron
+          image: blacktr/ipupdate-cron
+          imagePullPolicy: Always
+          env:
+            - name: DYN_HOST
+              value: 'afterworkbeer.com'
+            - name: DYN_USER
+              value: 'blacktr'
+            - name: DYN_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: ipupdate-config
+                  key: DYN_SECRET
