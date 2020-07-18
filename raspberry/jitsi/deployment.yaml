@@ -118,6 +118,10 @@ spec:
           imagePullPolicy: Always
           ports:
           - containerPort: 10000
+          resources:
+            requests:
+              memory: "1000Mi"
+              cpu: "3000m"
           env:
             - name: XMPP_SERVER
               value: localhost
