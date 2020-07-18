@@ -6,7 +6,7 @@ metadata:
   name: jvb-udp
   namespace: fuebiapp
 spec:
-  type: LoadBalancer
+  type: LoadBalancer # forward UDP/10000 from router to this IP
   ports:
   - name: "10000"
     port: 10000

@@ -15,4 +15,3 @@ spec:
     targetPort: 443
   selector:
     k8s-app: fuebiapp
-  type: LoadBalancer
