@@ -120,7 +120,7 @@ spec:
           - containerPort: 10000
           resources:
             requests:
-              memory: "1000Mi"
+              memory: "500Mi"
               cpu: "3000m"
           env:
             - name: XMPP_SERVER
