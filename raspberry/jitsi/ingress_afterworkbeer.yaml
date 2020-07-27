@@ -2,7 +2,7 @@
  apiVersion: networking.k8s.io/v1beta1
  kind: Ingress
  metadata:
-  name: fuebiapp-ingress
+  name: afterworkbeer-ingress
   namespace: fuebiapp
   annotations:
    kubernetes.io/ingress.class: nginx
@@ -10,10 +10,10 @@
  spec:
   tls:
     - hosts:
-      - meet.fuebiapp.com
-      secretName: meet-fuebiapp-com-tls
+      - meet.afterworkbeer.com
+      secretName: meet-afterworkbeer-com-tls
   rules:
-  - host: meet.fuebiapp.com
+  - host: meet.afterworkbeer.com
     http:
       paths:
       - path: /
