@@ -1,5 +1,5 @@
 ARG JITSI_REPO=jitsi
-FROM ${JITSI_REPO}/base
+FROM blacktr/base
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -20,7 +20,7 @@ RUN \
 	apt-get clean && \
 	rm -f /etc/nginx/conf.d/default.conf && \
 	rm -rf /tmp/pkg /tmp/install /var/cache/apt
-
+	
 EXPOSE 80 443
 
 VOLUME ["/config", "/etc/letsencrypt", "/usr/share/jitsi-meet/transcripts"]
